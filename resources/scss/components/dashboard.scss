@@ -1,0 +1,97 @@
+@use '../partials/variables.scss' as *;
+
+.bd_dashboard-wrapper {
+    padding: 2rem;
+}
+
+.bd_dashboard-stats-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bd_dashboard-msg-section,
+.bd_dashboard-rvws-section,
+.bd_dashboard-stat-1,
+.bd_dashboard-stat-2,
+.bd_dashboard-stat-3,
+.bd_dashboard-stat-4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bd_dashboard-stat-1 {
+    /* From https://css.glass */
+    background: rgba(110, 36, 180, 0.9);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(110, 36, 180, 1);
+}
+
+.bd_dashboard-stat-2 {
+    background-color: $primary-color;
+}
+
+.bd_dashboard-stat-3 {
+    /* From https://css.glass */
+    background: rgba(170, 9, 170, 0.902);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(168, 9, 168, 1);
+}
+@media screen and (min-width: 768px) {
+    .bd_dashboard-stats-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+    }
+
+    .bd_dashboard-stat-1 { grid-area: 1 / 1 / 2 / 3; }
+    .bd_dashboard-stat-2 { grid-area: 1 / 3 / 2 / 5; }
+    .bd_dashboard-stat-3 { grid-area: 2 / 1 / 3 / 5; }
+}
+@media screen and (min-width: 1280px) {
+    .bd_dashboard-stats-wrapper {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 2rem;
+        grid-row-gap: 0;
+    }
+
+    .bd_dashboard-stat-1 { grid-area: 1 / 1 / 3 / 3; }
+    .bd_dashboard-stat-2 { grid-area: 1 / 3 / 3 / 5; }
+    .bd_dashboard-stat-3 { grid-area: 1 / 5 / 3 / 7; }
+
+    .bd_dashboard-msg-section,
+    .bd_dashboard-rvws-section,
+    .bd_dashboard-stat-1,
+    .bd_dashboard-stat-2,
+    .bd_dashboard-stat-3 {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .bd_dashboard-stat-1,
+    .bd_dashboard-stat-2,
+    .bd_dashboard-stat-3 {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.truncate-custom {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    max-width: 100%; /* This ensures that the content doesn't exceed the parent's width */
+}

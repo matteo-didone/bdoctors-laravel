@@ -1,0 +1,151 @@
+@use './partials/variables.scss' as *;
+
+// Importing into index.scss all components listed
+@use './index.scss' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800;900&display=swap'); // Inter
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); // Vollkorn
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap'); // Dancing Script
+
+* {
+    // outline: 1px solid red;
+}
+
+// General Tags
+html {
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+span {
+    display: block;
+}
+
+.bd_overlay-img {
+    background: rgb(0, 195, 165);
+    background: linear-gradient(45deg, rgb(0, 195, 165) 40%, rgb(168, 242, 231) 100%);
+}
+
+.bd_btn {
+    background: rgb(243,244,246);
+    background: linear-gradient(45deg, rgba(243,244,246,1) 18%, rgba(0,195,165,1) 70%);
+    color: rgb(17 24 39);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease; /* Add this line */
+
+    &:hover {
+        background: rgb(0, 195, 165);
+        background: linear-gradient(45deg, rgba(0,195,165,1) 40%, rgba(168,242,231,1) 100%);
+        color: white;
+    }
+}
+
+main {
+    /* From https://css.glass */
+    background:
+        -webkit-linear-gradient(
+            110deg,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(204, 243, 237, 0.79) 60%
+        );
+    background:
+        -o-linear-gradient(
+            110deg,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(204, 243, 237, 0.79) 60%
+        );
+    background:
+        -moz-linear-gradient(
+            110deg,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(204, 243, 237, 0.79) 60%
+        );
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(204, 243, 237, 0.79) 60%
+        );
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+    -webkit-backdrop-filter: blur(5.8px);
+    min-height: calc(100vh);
+    margin: 1.5rem 1.5rem 8.5rem 1.5rem;
+}
+
+div.mycard-stats{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.46);
+}
+
+
+@media screen and (min-width: 1280px) {
+    main {
+        margin: 1.5rem 1.5rem 1.5rem calc($ml-aside-w + 1.5rem);
+        min-height: calc(100vh - 3rem);
+        // height: calc(100vh - 3rem);
+    }
+}
+
+.bd_login-container {
+    /* From https://css.glass */
+background:
+    -webkit-linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0.79) 60%,
+        rgba(204, 243, 237, 0.79) 60%
+    );
+background:
+    -o-linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0.79) 60%,
+        rgba(204, 243, 237, 0.79) 60%
+    );
+background:
+    -moz-linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0.79) 60%,
+        rgba(204, 243, 237, 0.79) 60%
+    );
+background:
+    linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0.79) 60%,
+        rgba(204, 243, 237, 0.79) 60%
+    );
+}
+
+@media screen and (min-width: 640px) {
+    
+    .bd_dashboard-stat-4{
+        width: 50%;
+    }
+    
+    .event-stats{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: 500ms ease;
+    z-index: 3000;
+    border-radius: 0.75rem;
+}
+}
